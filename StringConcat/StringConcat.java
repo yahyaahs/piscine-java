@@ -7,6 +7,9 @@ public class StringConcat {
 		if (s2 == null) {
 			s2="";
 		}
+		if (s1.isEmpty() && s2.isEmpty()){
+			return null;
+		}
 		return s1+s2;
     }
 }
