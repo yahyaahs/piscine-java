@@ -11,14 +11,14 @@ public class CleanExtract {
 			int fr = sp[i].indexOf('.');
 			int sec = sp[i].lastIndexOf('.');
 			if (fr<0){
-				n += sp[i].trim()+" ";
+				n += sp[i]+" ";
 			} else if( fr == sec){
-				n+= sp[i].substring(fr+1).trim()+" ";
+				n+= sp[i].substring(fr+1)+" ";
 			} else{
-				n+= sp[i].substring(fr +1, sec).trim()+" ";
+				n+= sp[i].substring(fr +1, sec)+" ";
 			}
 		}
-
-		return n.trim();
+		String[] hold = n.trim().split("\\s+");
+		return String.join(" ", hold);
     }
 }
