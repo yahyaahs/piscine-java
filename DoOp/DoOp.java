@@ -1,6 +1,9 @@
 public class DoOp {
 	public static String operate(String[] args) {
-		if (args == null || args.length != 3) {
+		if (args == null ) {
+			return null;
+		}
+		if (args.length != 3){
 			return null;
 		}
 		if (args[0] ==null || args[1]== null || args[2]==null){
