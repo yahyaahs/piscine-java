@@ -13,6 +13,7 @@ public class ExerciseRunner {
         // Reset out to stdout
         System.setOut(stdout);
         System.out.println(output.equals("test input file\n"));
+        System.out.println("this is the output : "+ output);
 
         ByteArrayOutputStream outputStream2 = new ByteArrayOutputStream();
         PrintStream printStream2 = new PrintStream(outputStream2);

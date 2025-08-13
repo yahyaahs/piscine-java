@@ -9,8 +9,9 @@ public class Cat {
 		for(String s : args){
 			FileInputStream file = new FileInputStream(s);
 			byte[] buff = new byte[1024];
-			while ((file.read(buff)) != -1) {
-				System.out.write(buff);
+			int nb;
+			while ((nb = file.read(buff)) != -1) {
+				System.out.write(buff, 0, nb);
 			}
 			file.close();
 		}
