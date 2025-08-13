@@ -1,11 +1,11 @@
 public class DoOp {
 	public static String operate(String[] args) {
 		if (args == null  || args.length != 3) {
-			return null;
+			return "Error";
 		}
 		
 		if (args[0] ==null || args[1]== null || args[2]==null){
-			return null;
+			return "Error";
 		}
 		if ("+".equals(args[1])) {
 
@@ -34,6 +34,6 @@ public class DoOp {
 			int i = Integer.parseInt(args[0]) * Integer.parseInt(args[2]);
 			return String.valueOf(i);
 		}
-		return null;
+		return "Error";
 	}
 }
