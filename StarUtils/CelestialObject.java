@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class CelestialObject {
     public double x;
     public double y;
@@ -72,6 +74,6 @@ public class CelestialObject {
         return x == obj.x && y ==obj.y && z == obj.z && name == obj.name;
     }
     public int hashCode(){
-        return this.hashCode();
+        return Objects.hash(name, x,y,z);
     }
 }
