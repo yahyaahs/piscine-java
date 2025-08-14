@@ -25,7 +25,7 @@ public class Capitalize {
 				split[i] = split[i].substring(0).toUpperCase();
 			}
 		}
-		file2.write(String.join(" ", split));
+		file2.write(String.join(" ", split).trim());
 		// System.out.println(String.join(" ", split));
 		file1.close();
 		file2.close();
