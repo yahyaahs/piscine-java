@@ -1,28 +1,16 @@
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class ExerciseRunner {
     public static void main(String[] args) throws IOException {
-        PrintStream stdout = System.out;
-
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        PrintStream printStream = new PrintStream(outputStream);
-        System.setOut(printStream);
-
-        Cat.cat(new String[]{"input.txt"});
-        String output = outputStream.toString();
-        // Reset out to stdout
-        System.setOut(stdout);
-        System.out.println(output.equals("test input file\n"));
-        System.out.println("this is the output : "+ output);
-
-        ByteArrayOutputStream outputStream2 = new ByteArrayOutputStream();
-        PrintStream printStream2 = new PrintStream(outputStream2);
-        System.setOut(printStream2);
-
-        Cat.cat(new String[]{});
-        String output2 = outputStream2.toString();
-        // Reset out to stdout
-        System.setOut(stdout);
-        System.out.println(output2.equals(""));
+        String input = "input file test\n";
+        ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+        CatInFile.cat(new String[]{"output"});
+        String fileContent = new String(Files.readAllBytes(Paths.get("output")));
+        System.out.println(fileContent.equals(input));
+        System.out.println(fileContent);
+        System.out.println(input);
     }
 }
