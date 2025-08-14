@@ -8,12 +8,13 @@ public class CatInFile {
 			return;
 		}
 
-		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-		FileWriter writer = new FileWriter(args[0]);
-		String s;
-		while ((s = reader.readLine()) != null) {
-			writer.write(s);
+		InputStream reader = System.in;
+		OutputStream file = new FileOutputStream(args[0]);
+		byte[] buffer = new byte[1024];
+		int n ;
+		while ((n = reader.read(buffer)) != -1) {
+			file.write(buffer, 0, n);
 		}
-		writer.close();
+		file.close();
     }
 }
