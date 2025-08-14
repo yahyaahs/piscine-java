@@ -70,8 +70,15 @@ public class CelestialObject {
     public String toString(){
         return String.format("%s is positioned at (%.3f, %.3f, %.3f)", name, x, y, z);
     }
-    public boolean equals(CelestialObject obj){
-        return x == obj.x && y ==obj.y && z == obj.z && name == obj.name;
+    public boolean equals(Object obj){
+        if(this == obj){
+            return true;
+        }
+        if(obj == null){
+            return false;
+        }
+        CelestialObject ob = (CelestialObject) obj;
+        return Objects.equals(name, ob.name)&& Objects.equals(x, ob.x)&&Objects.equals(y, ob.y)&&Objects.equals(z, ob.z);
     }
     public int hashCode(){
         return Objects.hash(this.name, this.x,this.y,this.z);
