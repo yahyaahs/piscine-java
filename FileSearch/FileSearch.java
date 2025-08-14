@@ -17,7 +17,7 @@ public class FileSearch {
 					}
 				}
 				if (f.isFile() && f.getName().equals(filename)) {
-					return f.getAbsolutePath();
+					return f.getPath();
 				}
 			}
 			return null;
