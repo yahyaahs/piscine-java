@@ -13,7 +13,6 @@ public class CatInFile {
 		String s;
 		while ((s = reader.readLine()) != null) {
 			writer.write(s);
-			writer.write("\n");
 		}
 		writer.close();
     }
