@@ -10,8 +10,11 @@ public class CatInFile {
 
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		FileWriter writer = new FileWriter(args[0]);
-		writer.write(reader.readLine());
-		writer.write("\n");
+		String s;
+		while ((s = reader.readLine()) != null) {
+			writer.write(s);
+			writer.write("\n");
+		}
 		writer.close();
     }
 }
