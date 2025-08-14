@@ -16,6 +16,9 @@ public class Capitalize {
 		}
 		String[] split = holder.split("\\s+");
 		for(int i = 0; i<split.length; i++){
+			if(split[i].isEmpty()){
+				continue;
+			}
 			if(split.length >1){
 				split[i] = split[i].substring(0,1).toUpperCase() + split[i].substring(1);
 			}else{
