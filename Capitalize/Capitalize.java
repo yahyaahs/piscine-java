@@ -16,10 +16,14 @@ public class Capitalize {
 		}
 		String[] split = holder.split("\\s+");
 		for(int i = 0; i<split.length; i++){
-			split[i] = split[i].substring(0,1).toUpperCase() + split[i].substring(1);
+			if(split.length >1){
+				split[i] = split[i].substring(0,1).toUpperCase() + split[i].substring(1);
+			}else{
+				split[i] = split[i].substring(0).toUpperCase();
+			}
 		}
 		file2.write(String.join(" ", split));
-		System.out.println(String.join(" ", split));
+		// System.out.println(String.join(" ", split));
 		file1.close();
 		file2.close();
 	
