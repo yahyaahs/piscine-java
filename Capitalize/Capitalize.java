@@ -20,7 +20,7 @@ public class Capitalize {
 				continue;
 			}
 			if(split.length >1){
-				split[i] = split[i].substring(0,1).toUpperCase() + split[i].substring(1);
+				split[i] = split[i].substring(0,1).toUpperCase() + split[i].substring(1).toLowerCase();
 			}else{
 				split[i] = split[i].substring(0).toUpperCase();
 			}
