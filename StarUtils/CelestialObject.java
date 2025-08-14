@@ -74,6 +74,6 @@ public class CelestialObject {
         return x == obj.x && y ==obj.y && z == obj.z && name == obj.name;
     }
     public int hashCode(){
-        return Objects.hash(name, x,y,z);
+        return Objects.hash(this.name, this.x,this.y,this.z);
     }
 }
