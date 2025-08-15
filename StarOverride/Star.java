@@ -26,7 +26,7 @@ public class Star extends CelestialObject{
         if(this == obj){
             return true;
         }
-        if(obj == null){
+        if(obj == null || getClass() != obj.getClass()){
             return false;
         }
         Star ob = (Star) obj;
