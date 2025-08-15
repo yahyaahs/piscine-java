@@ -9,7 +9,8 @@ public class Star extends CelestialObject{
         return magnitude;
     }
     public Star(String name, double x, double y, double z, double magnitude){
-        new CelestialObject();
+        super(name, x, y, z);
+        this.magnitude = magnitude;
     }
     @Override
     public String toString(){
@@ -28,6 +29,6 @@ public class Star extends CelestialObject{
     }
     @Override
     public int hashCode(){
-        return Objects.hash(magnitude);
+        return Objects.hash(getName(), getX(), getY(), getZ(), magnitude);
     }
 }
