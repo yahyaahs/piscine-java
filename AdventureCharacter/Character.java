@@ -20,7 +20,7 @@ public class Character {
     }
     public void takeDamage(int sub){
         if(currentHealth - sub < 0){
-            return;
+            currentHealth = 0;
         }else{
             currentHealth = currentHealth - sub;
         }
