@@ -30,17 +30,18 @@ public class Character {
 
         }
     }
-    public static Character fight(Character p1, Character p2){
-        while (p1.currentHealth >0 && p2.currentHealth >0) {
+
+    public static Character fight(Character p1, Character p2) {
+        while (p1.currentHealth > 0 && p2.currentHealth > 0) {
             p1.attack(p2);
-            if(p2.currentHealth != 0){
-            p2.attack(p1);
+            if (p2.currentHealth != 0) {
+                p2.attack(p1);
 
             }
         }
-        if(p1.currentHealth != 0){
+        if (p1.currentHealth != 0) {
             return p1;
-        }else{
+        } else {
             return p2;
         }
     }
