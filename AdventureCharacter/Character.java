@@ -15,7 +15,7 @@ public class Character {
     public int getcurrentHealth(){
         return currentHealth;
     }
-    public String getname(){
+    public String getName(){
         return name;
     }
     public void takeDamage(int sub){
