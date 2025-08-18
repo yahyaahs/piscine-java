@@ -9,10 +9,10 @@ public class Character {
         this.maxHealth = maxHealth;
         this.currentHealth = maxHealth;
     }
-    public int getmaxHealth(){
+    public int getMaxHealth(){
         return maxHealth;
     }
-    public int getcurrentHealth(){
+    public int getCurrentHealth(){
         return currentHealth;
     }
     public String getName(){
