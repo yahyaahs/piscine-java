@@ -24,12 +24,11 @@ public class Character {
             for (Character c : allCharacters) {
                 holder += String.format(" - %s\n", c.toString());
             }
-            holder += "------------------------------------------";
+            holder += "------------------------------------------\n";
             return holder;
 
         }
     }
-
     public static Character fight(Character p1, Character p2) {
         while (p1.currentHealth > 0 && p2.currentHealth > 0) {
             p1.attack(p2);
