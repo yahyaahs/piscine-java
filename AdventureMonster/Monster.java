@@ -1,4 +1,3 @@
-package AdventureMonster;
 
 public class Monster extends Character {
     private final int maxHealth;
