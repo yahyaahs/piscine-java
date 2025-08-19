@@ -1,10 +1,10 @@
 public class Templar extends Character implements Healer, Tank{
     private final int healCapacity;
-    private final int sheild;
-    public Templar(String name, int maxHealth, int healCapacity, int sheild){
+    private final int shield;
+    public Templar(String name, int maxHealth, int healCapacity, int shield){
         super(name, maxHealth);
         this.healCapacity = healCapacity;
-        this.sheild = sheild ;
+        this.shield = shield ;
     }
     @Override
     public int getHealCapacity(){
@@ -20,7 +20,7 @@ public class Templar extends Character implements Healer, Tank{
     }
     @Override
     public int getShield(){
-        return sheild;
+        return shield;
     }
     @Override
     public String toString(){
