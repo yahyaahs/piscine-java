@@ -1,4 +1,3 @@
-package AdventureMonster;
 
 public interface Healer {
     void heal(Character c);
