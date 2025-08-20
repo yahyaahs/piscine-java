@@ -37,6 +37,9 @@ public class ListSearchIndex {
         }
         List<Integer> matchingIndices = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
+            if(list.get(i) == null){
+                return null;
+            }
             if (value.equals(list.get(i))) {
                 matchingIndices.add(i);
             }
