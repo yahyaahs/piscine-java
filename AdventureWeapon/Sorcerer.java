@@ -24,17 +24,17 @@ public class Sorcerer extends Character implements Healer  {
     @Override
     public String toString(){
         if(getCurrentHealth() != 0){
-            return String.format("%s is a sorcerer with %d HP. It can heal %d HP. %s", this.name, this.getCurrentHealth(), healCapacity, weapon.toString());
+            return String.format("%s is a sorcerer with %d HP. It can heal %d HP. %s", this.name, this.getCurrentHealth(), healCapacity, super.getWeapon().toString());
         }else{
-            return String.format("%s is a dead sorcerer. So bad, it could heal %d HP. %s", this.name, this.healCapacity, weapon.toString());
+            return String.format("%s is a dead sorcerer. So bad, it could heal %d HP. %s", this.name, this.healCapacity, super.getWeapon().toString());
         }
     }
     public void attack(Character c) {
         heal(this);
-        if(weapon == null){
+        if(super.getWeapon() == null){
             c.takeDamage(10);
         }else {
-            c.takeDamage(weapon.getDamage());
+            c.takeDamage(super.getWeapon().getDamage());
         }
     }
     public void takeDamage(int sub) {
