@@ -1,0 +1,54 @@
+public class Templar extends Character implements Healer, Tank{
+    private final int healCapacity;
+    private final int shield;
+    public Templar(String name, int maxHealth, int healCapacity, int shield, Weapon weapon){
+        super(name, maxHealth, weapon);
+        this.healCapacity = healCapacity;
+        this.shield = shield ;
+    }
+    @Override
+    public int getHealCapacity(){
+        return healCapacity;
+    }
+    @Override
+    public void heal(Character c)throws DeadCharacterException{
+                   if(super.getCurrentHealth()== 0){
+            throw new DeadCharacterException(this);
+        }
+        if(c.getCurrentHealth()+ healCapacity > c.getMaxHealth()){
+            c.setCurrentHealth(c.getMaxHealth());
+            return;
+        }
+        c.setCurrentHealth(c.getCurrentHealth()+ healCapacity);
+    }
+    @Override
+    public int getShield(){
+        return shield;
+    }
+    @Override
+    public String toString(){
+        if(getCurrentHealth() == 0){
+            return String.format("%s has been beaten, even with its %d shield. So bad, it could heal %d HP. %s", getName(), getShield(),getHealCapacity(), super.getWeapon().toString());
+        }else{
+            return String.format("%s is a strong Templar with %d HP. It can heal %d HP and has a shield of %d. %s", getName(), getCurrentHealth(), getHealCapacity(), getShield(), super.getWeapon().toString());
+        }
+    }
+
+    public void attack(Character c) throws DeadCharacterException{
+                   if(super.getCurrentHealth()== 0){
+            throw new DeadCharacterException(this);
+        }
+        heal(this)  ;
+        if(super.getWeapon()== null){
+            c.takeDamage(6);
+        }else {
+            c.takeDamage(super.getWeapon().getDamage());
+        }
+    }
+    public void takeDamage(int sub) throws DeadCharacterException{
+                   if(super.getCurrentHealth()== 0){
+            throw new DeadCharacterException(this);
+        }
+        setCurrentHealth(Math.max(getCurrentHealth() - (sub- shield), 0));
+    }
+}
