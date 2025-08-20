@@ -29,17 +29,12 @@ public class ListSearchIndex {
     }
     public static List<Integer> findAllIndexes(List<Integer> list, Integer value) {
         // your code here
-        if (list == null){
-            return null;
-        }
-          if(list.isEmpty()){
-            return list;
-        }
+     
         List<Integer> matchingIndices = new ArrayList<>();
+        if(list == null){
+            return matchingIndices;
+        }
         for (int i = 0; i < list.size(); i++) {
-            if(list.get(i) == null){
-                return null;
-            }
             if (value.equals(list.get(i))) {
                 matchingIndices.add(i);
             }
