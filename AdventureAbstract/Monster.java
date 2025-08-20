@@ -22,7 +22,8 @@ public class Monster extends Character {
         if (getCurrentHealth() - sub < 0) {
             setCurrentHealth(0);
         } else {
-            setCurrentHealth( (int) Math.floor( (getCurrentHealth() - sub)* 0.8));
+            int reducedDamage = (int) Math.floor(sub * 0.8);
+            setCurrentHealth(getCurrentHealth() - reducedDamage);
         }
     }
 
