@@ -6,7 +6,7 @@ public class Weapon {
         this.damge = damage;
     }
 
-    public int getDamge() {
+    public int getDamage() {
         return damge;
     }
 
