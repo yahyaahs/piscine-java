@@ -4,7 +4,9 @@ import java.util.ArrayList;
 public class ListSearchIndex {
     public static Integer findLastIndex(List<Integer> list, Integer value) {
         // your code her
-   
+        if (list == null){
+            return null;
+        }
         int index = list.lastIndexOf(value);
         if(index == -1){
             return null;
