@@ -3,7 +3,7 @@ public class Weapon {
     protected final int damage;
     public Weapon(String name, int damage){
         this.name = name;
-        this.damge = damage;
+        this.damage = damage;
     }
 
     public int getDamage() {
