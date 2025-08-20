@@ -10,16 +10,16 @@ public class Monster extends Character {
     @Override
     public String toString(){
         if(getCurrentHealth() != 0){
-            return String.format("%s is a monster with %d HP. %s", this.name, getCurrentHealth(), weapon.toString());
+            return String.format("%s is a monster with %d HP. %s", this.name, getCurrentHealth(), Weapon.toString());
         }else{
-            return String.format("%s is a monster and is dead. %s", name, weapon.toString());
+            return String.format("%s is a monster and is dead. %s", name, Weapon.toString());
         }
     }
     public void attack(Character c) {
-        if(damage == null){
+        if(Weapon.getDamage() == null){
             c.takeDamage(7);
         }else {
-            c.takeDamage(damage);
+            c.takeDamage(Weapon.getDamage());
         }
     }
 
