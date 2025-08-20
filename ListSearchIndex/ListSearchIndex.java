@@ -4,15 +4,14 @@ import java.util.ArrayList;
 public class ListSearchIndex {
     public static Integer findLastIndex(List<Integer> list, Integer value) {
         // your code her
-        if(list.isEmpty()){
-            return null;
-        }
-   int index = list.lastIndexOf(value);
+   
+        int index = list.lastIndexOf(value);
         if(index == -1){
             return null;
         }else{
             return index;
-        }    }
+        }    
+    }
     public static Integer findFirstIndex(List<Integer> list, Integer value) {
         // your code here
           if(list.isEmpty()){
