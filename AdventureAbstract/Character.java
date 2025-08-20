@@ -14,7 +14,7 @@ abstract public class Character {
         this.currentHealth = maxHealth;
         allCharacters.add(this);
     }
-    private void setCurrentHealth(int n){
+    public void setCurrentHealth(int n){
         this.currentHealth = n;
     }
  
