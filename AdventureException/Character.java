@@ -1,0 +1,82 @@
+
+import java.util.List;
+import java.util.ArrayList;
+
+abstract public class Character {
+    private final int maxHealth;
+    private int currentHealth;
+    private final String name;
+    private static List<Character> allCharacters = new ArrayList<Character>();
+    private Weapon weapon;
+    public Character(String name, int maxHealth, Weapon weapon) {
+        this.name = name;
+        this.maxHealth = maxHealth;
+        this.currentHealth = maxHealth;
+        allCharacters.add(this);
+        this.weapon = weapon;
+    }
+
+    protected void setCurrentHealth(int n) {
+        this.currentHealth = n;
+    }
+
+    public static String printStatus() {
+        if (allCharacters.size() == 0) {
+            return "------------------------------------------\nNobody's fighting right now !\n------------------------------------------\n";
+
+        } else {
+            String holder = "------------------------------------------\nCharacters currently fighting :\n";
+            for (Character c : allCharacters) {
+                holder += String.format(" - %s\n", c.toString());
+            }
+            holder += "------------------------------------------\n";
+            return holder;
+
+        }
+    }
+
+    public static Character fight(Character p1, Character p2) {
+        while (p1.currentHealth > 0 && p2.currentHealth > 0) {
+            p1.attack(p2);
+            if (p2.currentHealth != 0) {
+                p2.attack(p1);
+
+            }
+        }
+        if (p1.currentHealth != 0) {
+            return p1;
+        } else {
+            return p2;
+        }
+    }
+
+    public int getMaxHealth() {
+        return maxHealth;
+    }
+
+    public int getCurrentHealth() {
+        return currentHealth;
+    }
+
+    public String getName() {
+        return name;
+    }
+    public void setWeapon(Weapon weapon){
+        this.weapon = weapon;
+    }
+
+    public Weapon getWeapon() {
+        return weapon;
+    }
+
+    abstract public void takeDamage(int sub);
+
+    abstract public void attack(Character c);
+
+    public String toString() {
+        if (currentHealth == 0) {
+            return String.format("%s : KO", name);
+        }
+        return String.format("%s : %d/%d", name, currentHealth, maxHealth);
+    }
+}
