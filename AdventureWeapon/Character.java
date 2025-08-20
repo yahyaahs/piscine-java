@@ -61,6 +61,13 @@ abstract public class Character {
     public String getName() {
         return name;
     }
+    public void setWeapon(Weapon weapon){
+        this.weapon = weapon;
+    }
+
+    public Weapon getWeapon() {
+        return weapon;
+    }
 
     abstract public void takeDamage(int sub);
 
