@@ -6,14 +6,14 @@ public class Weapon {
         this.damge = damage;
     }
 
-    public static int getDamge() {
+    public int getDamge() {
         return damge;
     }
 
-    public static String getName() {
+    public String getName() {
         return name;
     }
-    public static String toString(){
+    public String toString(){
         return  String.format("%s deals %d damages", name, damge);
     }
 }
