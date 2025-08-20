@@ -16,7 +16,7 @@ public class Monster extends Character {
         }
     }
     public void attack(Character c) {
-        if(weapon.getDamage() == null){
+        if(weapon== null){
             c.takeDamage(7);
         }else {
             c.takeDamage(weapon.getDamage());

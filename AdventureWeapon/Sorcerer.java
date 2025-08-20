@@ -31,7 +31,7 @@ public class Sorcerer extends Character implements Healer  {
     }
     public void attack(Character c) {
         heal(this);
-        if(weapon.getDamage() == null){
+        if(weapon == null){
             c.takeDamage(10);
         }else {
             c.takeDamage(weapon.getDamage());
