@@ -14,6 +14,9 @@ public class ListSearchIndex {
     }
     public static Integer findFirstIndex(List<Integer> list, Integer value) {
         // your code here
+        if (list ==null ){
+            return null;
+        }
           if(list.isEmpty()){
             return null;
         }
