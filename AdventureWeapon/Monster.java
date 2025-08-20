@@ -12,7 +12,7 @@ public class Monster extends Character {
         if(getCurrentHealth() != 0){
             return String.format("%s is a monster with %d HP. %s", this.name, getCurrentHealth(), getWeapon().toString());
         }else{
-            return String.format("%s is a monster and is dead. %s", name, getWeapon().toString();
+            return String.format("%s is a monster and is dead. %s", name, getWeapon().toString());
         }
     }
     public void attack(Character c) {
