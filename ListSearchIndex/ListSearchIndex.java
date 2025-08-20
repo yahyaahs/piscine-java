@@ -27,7 +27,7 @@ public class ListSearchIndex {
     public static List<Integer> findAllIndexes(List<Integer> list, Integer value) {
         // your code here
           if(list.isEmpty()){
-            return null;
+            return list;
         }
         List<Integer> matchingIndices = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
