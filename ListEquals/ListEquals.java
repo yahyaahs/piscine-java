@@ -6,6 +6,6 @@ public class ListEquals {
         if(list1 == null || list2 == null){
             return false;
         }
-        list1.equals(list2);
+        return list1.equals(list2);
     }
 }
