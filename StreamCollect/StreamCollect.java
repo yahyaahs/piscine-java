@@ -17,6 +17,6 @@ public class StreamCollect {
     public static String orderAndConcatWithSharp(Stream<String> s) {
 
         // your code here
-        return "##{"+s.sorted().collect(Collectors.joining(" # "))+ "}";
+        return s.sorted().collect(Collectors.joining(" # ", "{", "}"));
     }
 }
