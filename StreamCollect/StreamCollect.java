@@ -8,11 +8,15 @@ public class StreamCollect {
         // your code here
         return s.collect(Collectors.groupingBy(st -> st.charAt(0)));
     }
-    // public static Map<Integer, Optional<Integer>> getMaxByModulo4(Stream<Integer> s) {
-    //     // your code here
-    // }
+    public static Map<Integer, Optional<Integer>> getMaxByModulo4(Stream<Integer> s) {
+        // your code here
+        return s.collect(Collectors.groupingBy(i ->i %4, Collectors.maxBy(Comparator.naturalOrder())));
 
-    // public static String orderAndConcatWithSharp(Stream<String> s) {
-    //     // your code here
-    // }
+    }
+
+    public static String orderAndConcatWithSharp(Stream<String> s) {
+
+        // your code here
+        return "##{"+s.sorted().collect(Collectors.joining(" # "))+ "}";
+    }
 }
