@@ -6,7 +6,7 @@ import java.util.stream.Stream;
 public class StreamCollect {
     public static Map<Character, List<String>> mapByFirstLetter(Stream<String> s) {
         // your code here
-        return s.collect(Collectors.groupingBy(st -> st.charAt(0)));
+        return s.collect(Collectors.groupingBy(st -> Character.toUpperCase(st.charAt(0))));
     }
     public static Map<Integer, Optional<Integer>> getMaxByModulo4(Stream<Integer> s) {
         // your code here
