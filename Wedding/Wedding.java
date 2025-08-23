@@ -12,7 +12,7 @@ public class Wedding {
         List<String> key = new ArrayList<>(first);
         List<String> val = new ArrayList<>(first);
 
-        for(int i = 0; i<Math.max(key.size(), val.size()); i++){
+        for(int i = 0; i<Math.min(key.size(), val.size()); i++){
             m.put(key.get(i), val.get(i));
         }
         return m;
