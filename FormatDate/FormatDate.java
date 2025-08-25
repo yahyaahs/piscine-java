@@ -19,10 +19,11 @@ public class FormatDate {
         int day = dateTime.getDayOfMonth();
         Month mon = dateTime.getMonth();
         int year = dateTime.getYear();
-        String month = mon.getDisplayName(TextStyle.FULL, Locale.FRENCH);
+        String month = mon.getDisplayName(TextStyle.SHORT, Locale.FRENCH);
         return String.format("Le %d %s de l'an %d à %dh%d et %ds", day,month, year, hours, min, sec );
 
     }
+// ✘ Should return Le 27 oct. de l'an 2021 à 16h52m et 31s, but was Le 27 octobre de l'an 2021 à 16h52 et 31s
 
     public static String formatSimple(LocalDate date) {
         // your code here
