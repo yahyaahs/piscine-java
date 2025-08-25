@@ -10,6 +10,9 @@ public class FormatDate {
 
     public static String formatToFullText(LocalDateTime dateTime) {
         // your code here
+        if(dateTime == null){
+            return null;
+        }
         int hours = dateTime.getHour();
         int min = dateTime.getMinute();
         int sec = dateTime.getSecond();
@@ -23,6 +26,9 @@ public class FormatDate {
 
     public static String formatSimple(LocalDate date) {
         // your code here
+        if(date == null){
+            return null;
+        }
         Month mon = date.getMonth();
         String month = mon.getDisplayName(TextStyle.FULL, Locale.ITALIAN);
         int day = date.getDayOfMonth();
@@ -33,6 +39,9 @@ public class FormatDate {
 
     public static String formatIso(LocalTime time) {
         // your code here
+        if(time == null){
+            return null;
+        }
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss.nnnnnnnnn");
         return formatter.format(time).toString();
     }
