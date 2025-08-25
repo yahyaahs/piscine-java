@@ -42,7 +42,15 @@ public class FormatDate {
         if(time == null){
             return null;
         }
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss.nnnnnnnnn");
+        DateTimeFormatter formatter ;
+        int n = time.getNano();
+        if (n> 0){
+                    formatter = DateTimeFormatter.ofPattern("HH:mm:ss.nnnnnnnnn");
+
+        }else{
+                                formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+
+        }
         return formatter.format(time).toString();
     }
       public static void main(String[] args) {
