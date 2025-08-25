@@ -1,0 +1,45 @@
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.Month;
+import java.time.format.DateTimeFormatter;
+import java.time.format.TextStyle;
+import java.util.Locale;
+
+public class FormatDate {
+
+    public static String formatToFullText(LocalDateTime dateTime) {
+        // your code here
+        int hours = dateTime.getHour();
+        int min = dateTime.getMinute();
+        int sec = dateTime.getSecond();
+        int day = dateTime.getDayOfMonth();
+        Month mon = dateTime.getMonth();
+        int year = dateTime.getYear();
+        String month = mon.getDisplayName(TextStyle.FULL, Locale.FRENCH);
+        return String.format("Le %d %s de l'an %d à %dh%d et %ds", day,month, year, hours, min, sec );
+
+    }
+
+    public static String formatSimple(LocalDate date) {
+        // your code here
+        Month mon = date.getMonth();
+        String month = mon.getDisplayName(TextStyle.FULL, Locale.ITALIAN);
+        int day = date.getDayOfMonth();
+        int year = date.getYear()%100;
+        return String.format("%s %d %d", month, day, year );
+    }
+    
+
+    public static String formatIso(LocalTime time) {
+        // your code here
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss.nnnnnnnnn");
+        return formatter.format(time).toString();
+    }
+      public static void main(String[] args) {
+        System.out.println(FormatDate.formatToFullText(LocalDateTime.of(2021, 8, 22, 13, 25, 46)));
+        System.out.println(FormatDate.formatSimple(LocalDate.of(2022, 2, 13)));
+        System.out.println(FormatDate.formatIso(LocalTime.of(16, 18, 56, 8495847)));
+    }
+
+}
