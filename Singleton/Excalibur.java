@@ -1,6 +1,6 @@
 class Excalibur{
-    public String name;
-    public static Excalibur instance;
+    private String name;
+    private static Excalibur instance;
     private Excalibur(){
         this.name = "Sword";
     }
