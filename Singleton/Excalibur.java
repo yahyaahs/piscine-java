@@ -4,6 +4,9 @@ class Excalibur{
     public Excalibur(){
         this.name = "Sword";
     }
+    public Excalibur(String name){
+        this.name = name;
+    }
 
     public static Excalibur getInstance(){
         if(instance == null){
