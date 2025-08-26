@@ -8,6 +8,7 @@ public class DifferenceBetweenDate {
 
     public static Duration durationBetweenTime(LocalTime localTime1, LocalTime localTime2) {
         // your code here
+        
         return Duration.between(localTime1, localTime2).abs();
     }
 
