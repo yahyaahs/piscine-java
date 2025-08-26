@@ -18,7 +18,7 @@ public class RegexReplace {
             String[] subParts = user.split("[-._]");
             user = subParts[0];
             for (int i = 1; i < subParts.length; i++) {
-                user += "*".repeat(subParts[i].length());
+                user += "." +"*".repeat(subParts[i].length());
             }
         } else {
             String firstThree = user.substring(0, 3);
