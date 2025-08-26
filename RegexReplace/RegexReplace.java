@@ -35,7 +35,7 @@ public class RegexReplace {
             domain = first + "." + second + "." + third;
         } else if (domainParts.length == 2) {
             String first = "*".repeat(domainParts[0].length());
-            if (domainParts[1].equals("com") &&domainParts[1].equals("net") && domainParts[1].equals("org")) {
+            if (!domainParts[1].equals("com") &&!domainParts[1].equals("net") && !domainParts[1].equals("org")) {
                 String second = "*".repeat(domainParts[1].length());
                 domain = first + "." + second;
             }else{
