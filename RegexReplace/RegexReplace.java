@@ -1,4 +1,6 @@
 import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class RegexReplace {
     public static String removeUnits(String s) {
@@ -11,14 +13,24 @@ public class RegexReplace {
         if (s == null || s.isEmpty()) {
             return s;
         }
+        Pattern p = Pattern.compile("[_\\-.]");
+        Matcher matcher = p.matcher(s);
+        int elem = -1;
+        if(matcher.find()){
+             elem = matcher.start();
+        }
         String[] parts = s.split("@");
         String user = parts[0];
         String domain = parts[1];
         if (user.length() > 3 && (user.contains("-") || user.contains(".") || user.contains("_"))) {
             String[] subParts = user.split("[-._]");
             user = subParts[0];
+ 
             for (int i = 1; i < subParts.length; i++) {
-                user += "." +"*".repeat(subParts[i].length());
+            if (elem != -1) {
+                user += s.charAt(elem);
+            }
+                user += "*".repeat(subParts[i].length());
             }
         } else {
             String firstThree = user.substring(0, 3);
@@ -52,7 +64,7 @@ public class RegexReplace {
     // jan*@*******.co.***
     // jac***@*******.**
     public static void main(String[] args) throws IOException {
-        System.out.println(RegexReplace.obfuscateEmail("john.doe@example.com"));
+        System.out.println(RegexReplace.obfuscateEmail("john_doe_hg@example.com"));
         // System.out.println(RegexReplace.obfuscateEmail("jann@example.co.org"));
         // System.out.println(RegexReplace.obfuscateEmail("jackob@example.fr"));
     }
