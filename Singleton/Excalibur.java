@@ -1,10 +1,10 @@
 class Excalibur{
     public String name;
     public static Excalibur instance;
-    public Excalibur(){
+    private Excalibur(){
         this.name = "Sword";
     }
-    public Excalibur(String name){
+    private Excalibur(String name){
         this.name = name;
     }
 
