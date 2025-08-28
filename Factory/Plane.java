@@ -1,5 +1,5 @@
 
-public class Plane extends Transport {
+public class Plane implements Transport {
     int distance;
 
     public Plane(int distance){

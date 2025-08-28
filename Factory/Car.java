@@ -1,5 +1,5 @@
 
-public class Car extends Transport{
+public class Car implements Transport{
 
     int distance;
     public Car(int distance){

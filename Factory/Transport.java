@@ -1,5 +1,5 @@
 
-public abstract class Transport {
+public interface Transport {
 
     public abstract int getDistance();
     
