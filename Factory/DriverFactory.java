@@ -4,7 +4,7 @@ public class DriverFactory {
 
     public static Driver getDriver(String name) {
         if (name.equals("Car")) {
-            return new carDriver();
+            return new CarDriver();
         } else if (name.equals("Plane")) {
             return new PlaneDriver();
         }
