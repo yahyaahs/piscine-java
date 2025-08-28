@@ -2,11 +2,11 @@
 public class TransportFactory {
 
     public static int getTransport(String name){
-        if(name.equals("car")){
+        if(name.equals("Car")){
             return 600;
-        }else if(name.equals("plane")){
-            return 10000;
         }
+        return 10000;
+
     }
 
     public static void main(String[] args)  {

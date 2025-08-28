@@ -1,4 +1,3 @@
-package Factory;
 
 public class Plane extends Transport {
     int distance;

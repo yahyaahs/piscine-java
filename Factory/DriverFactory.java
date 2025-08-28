@@ -1,12 +1,13 @@
-import java.sql.Driver;
 
 public class DriverFactory {
 
-    public Driver getDriver(String name) {
-        if (name.equals("car")) {
+
+    public static Driver getDriver(String name) {
+        if (name.equals("Car")) {
             return new carDriver();
-        } else if (name.equals("plane")) {
-            return 10000;
+        } else if (name.equals("Plane")) {
+            return new PlaneDriver();
         }
+        return null;
     }
 }

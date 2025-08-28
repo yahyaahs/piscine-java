@@ -1,4 +1,3 @@
- package Factory;
 
 public abstract class Transport {
 
